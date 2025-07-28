@@ -1,6 +1,6 @@
 async function indexGet(req, res) {
     res.render("index", {
-        title: "User list"
+        title: "Main Page"
     });
 }
 

@@ -1,0 +1,1 @@
+This is an app for the backend portion of TOP. I'm making a book tracker rather than doing something with inventory.

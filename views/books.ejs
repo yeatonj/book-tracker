@@ -6,7 +6,19 @@
 </head>
 <body>
   <h1><%= title %></h1>
-  <p>This will be the books page.</p>
+  <h2>Books:</h2>
+  <ul>
+    <% for (let i = 0; i < books.length; i++) { %>
+      <li>
+        <p> <%= books[i].title %> </p>
+        <ul>
+          <li>Author: <%= books[i].author %></li>
+          <li>Page Count: <%= books[i].pages %></li>
+          <li>Summary: <%= books[i].summary %></li>
+        </ul>
+      </li>
+    <% } %>
+  </ul>
   <a href="/">Home</a>
 </body>
 </html>

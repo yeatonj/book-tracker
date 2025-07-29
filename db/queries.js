@@ -40,6 +40,16 @@ async function getUserBooks(id) {
     return rows;
 }
 
+async function addAuthor(name) {
+    await pool.query("INSERT INTO authors (name) VALUES ($1)", [name]);
+    return rows;
+}
+
+async function addUser(name) {
+    await pool.query("INSERT INTO users (name) VALUES ($1)", [name]);
+    return rows;
+}
+
 module.exports = {
   getAllBooks,
   getBook,
@@ -48,5 +58,7 @@ module.exports = {
   getUserBooks,
   getAllAuthors,
   getAuthorName,
-  getAuthorBooks
+  getAuthorBooks,
+  addUser,
+  addAuthor
 };

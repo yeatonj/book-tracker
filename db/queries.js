@@ -22,4 +22,6 @@ async function getUserBooks(id) {
 
 module.exports = {
   getAllBooks,
+  getAllUsers,
+  getUserBooks
 };

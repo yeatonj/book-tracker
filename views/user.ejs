@@ -1,4 +1,4 @@
-<!-- views/index.ejs -->
+<!-- views/user.ejs -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,11 +6,11 @@
 </head>
 <body>
   <h1><%= title %></h1>
-  <h2>Users:</h2>
+  <h2>User <%= name %>:</h2>
   <ul>
-    <% for (let i = 0; i < users.length; i++) { %>
+    <% for (let i = 0; i < books.length; i++) { %>
       <li>
-        <a href="/users/<%= users[i].id %>"><%= users[i].name %></a>
+        <p>Title: <%= books[i].title %>, Rating: <%= books[i].rating %></p>
       </li>
     <% } %>
   </ul>

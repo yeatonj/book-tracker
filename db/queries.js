@@ -15,6 +15,11 @@ async function getAllUsers() {
     return rows;
 }
 
+async function getUserName(id) {
+    const { rows } = await pool.query("SELECT name FROM users WHERE id=$1", [id]);
+    return rows;
+}
+
 async function getUserBooks(id) {
     const { rows } = await pool.query("SELECT books.title, booksread.rating FROM users INNER JOIN booksread ON users.id=booksread.user_id INNER JOIN books ON booksread.book_id=books.id WHERE user_id=$1;", [id]);
     return rows;
@@ -23,5 +28,6 @@ async function getUserBooks(id) {
 module.exports = {
   getAllBooks,
   getAllUsers,
+  getUserName,
   getUserBooks
 };

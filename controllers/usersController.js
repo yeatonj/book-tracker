@@ -1,4 +1,4 @@
-const { getAllUsers, getUserBooks, getUserName } = require("../db/queries");
+const { getAllUsers, getUserBooks, getUserName, addUser } = require("../db/queries");
 
 async function usersGet(req, res) {
     const allUsers = await getAllUsers();
@@ -28,9 +28,15 @@ async function userGet(req, res) {
     }
 }
 
+async function usersPost(req, res) {
+    await addUser(req.body.newUser);
+    res.redirect("/users");
+}
+
 
 
 module.exports = {
     usersGet,
-    userGet
+    userGet,
+    usersPost
 }

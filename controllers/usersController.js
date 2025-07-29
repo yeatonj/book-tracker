@@ -12,11 +12,20 @@ async function userGet(req, res) {
     const { userId } = req.params;
     const userName = await getUserName(userId);
     const userData = await getUserBooks(userId);
-    res.render("user", {
-        title: "User Data",
-        name: userName[0].name,
-        books: userData,
-    });
+    if (userName.length > 0) {
+        res.render("user", {
+            title: "User Data",
+            name: userName[0].name,
+            books: userData,
+        });
+    }
+    else {
+        res.render("errors/not-found", {
+            title: "Not Found",
+            errMsg: "No user found to match this ID.",
+            backPath: "/users"
+        });
+    }
 }
 
 

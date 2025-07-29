@@ -5,10 +5,20 @@ async function getAllBooks() {
   return rows;
 }
 
-// async function getAllAuthors() {
-//   const { rows } = await pool.query("SELECT books.title, authors.name AS author, books.pages, books.summary FROM books INNER JOIN authors ON books.author_id=authors.id;");
-//   return rows;
-// }
+async function getAllAuthors() {
+  const { rows } = await pool.query("SELECT * FROM authors;");
+    return rows;
+}
+
+async function getAuthorName(id) {
+    const { rows } = await pool.query("SELECT name FROM authors WHERE id=$1", [id]);
+    return rows;
+}
+
+async function getAuthorBooks(id) {
+    const { rows } = await pool.query("SELECT books.title FROM authors INNER JOIN books ON authors.id=books.author_id WHERE author_id=$1;", [id]);
+    return rows;
+}
 
 async function getAllUsers() {
     const { rows } = await pool.query("SELECT * FROM users;");
@@ -29,5 +39,8 @@ module.exports = {
   getAllBooks,
   getAllUsers,
   getUserName,
-  getUserBooks
+  getUserBooks,
+  getAllAuthors,
+  getAuthorName,
+  getAuthorBooks
 };

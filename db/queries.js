@@ -42,12 +42,10 @@ async function getUserBooks(id) {
 
 async function addAuthor(name) {
     await pool.query("INSERT INTO authors (name) VALUES ($1)", [name]);
-    return rows;
 }
 
 async function addUser(name) {
     await pool.query("INSERT INTO users (name) VALUES ($1)", [name]);
-    return rows;
 }
 
 module.exports = {

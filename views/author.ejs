@@ -1,0 +1,19 @@
+<!-- views/user.ejs -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= title %></title>
+</head>
+<body>
+  <h1><%= title %></h1>
+  <h2>Author <%= name %>:</h2>
+  <ul>
+    <% for (let i = 0; i < books.length; i++) { %>
+      <li>
+        <p>Title: <%= books[i].title %></p>
+      </li>
+    <% } %>
+  </ul>
+  <a href="/">Home</a>
+</body>
+</html>

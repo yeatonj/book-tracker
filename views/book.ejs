@@ -1,0 +1,19 @@
+<!-- views/book.ejs -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= title %></title>
+</head>
+<body>
+    <h1><%= title %></h1>
+    <h2><%= book.title %></h2>
+    <ul>
+        <li>Author: <%= book.author %></li>
+        <li>Page Count: <%= book.pages %></li>
+        <li>Summary: <%= book.summary %></li>
+        <li>Tags: <%= book.tags %></li>
+        <li>Genres: <%= book.genres %></li>
+    </ul>
+    <a href="/">Home</a>
+</body>
+</html>
